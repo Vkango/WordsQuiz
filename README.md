@@ -1,29 +1,103 @@
-# quick-review
+# Quick Review - 单词测验应用 (By Claude 4)
 
-This template should help get you started developing with Vue 3 in Vite.
+一个基于 Vue 3 开发的交互式单词测验应用，支持 CSV 文件导入、随机测试和错题导出功能。
 
-## Recommended IDE Setup
+该 App 为 Copilot Claude Sonnet 4 AI 全程开发。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 功能特性
 
-## Customize configuration
+- **📁 CSV 文件导入**: 支持导入包含序号、单词、释义三列的 CSV 格式单词库
+- **🎲 随机排序**: 每次测验自动随机打乱单词顺序，避免记忆顺序
+- **📝 沉浸式默写**: 给出中文释义，用户输入英文单词进行测验
+- **⚡ 即时判题**: 按回车键提交答案，错误时显示正确答案，正确时直接进入下一题
+- **📊 详细结果**: 显示总题数、正确数、错误数和准确率
+- **📋 错题导出**: 将所有错题导出为 CSV 文件，方便后续复习
+- **📱 响应式设计**: 支持桌面端和移动端设备
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🛠️ 技术栈
 
-## Project Setup
+- **前端框架**: Vue 3 (Composition API)
+- **构建工具**: Vite
+- **样式**: CSS3 (支持深色模式)
+- **开发环境**: Node.js
 
-```sh
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js 16.0 或更高版本
+- npm 或 yarn 包管理器
+
+### 安装依赖
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 开发模式
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 生产构建
 
-```sh
+```bash
 npm run build
 ```
+
+构建文件将输出到 `dist` 目录
+
+### 预览生产版本
+
+```bash
+npm run preview
+```
+
+## 📖 使用指南
+
+### 1. 准备单词库
+
+创建一个 CSV 文件，格式如下：
+
+```csv
+序号,单词,释义
+1,apple,苹果
+2,book,书籍
+3,computer,计算机
+4,beautiful,美丽的
+5,important,重要的
+```
+
+**注意事项：**
+- 第一行必须是标题行（序号,单词,释义）
+- 确保文件编码为 UTF-8
+- 单词和释义中不要包含逗号，如需要请使用引号包围
+
+### 2. 导入单词库
+
+1. 点击"选择CSV文件"按钮
+2. 选择准备好的单词库文件
+3. 系统会自动解析并显示导入的单词数量
+
+### 3. 开始测验
+
+1. 确认单词导入成功后，点击"开始测验"
+2. 系统会随机打乱单词顺序
+3. 根据显示的中文释义，输入对应的英文单词
+4. 按回车键或点击"提交答案"按钮确认
+
+### 4. 查看结果
+
+测验完成后会显示：
+- 总题数、正确数、错误数、准确率
+- 所有错误单词的详细列表（包含用户答案和正确答案）
+- 导出错题CSV文件的选项
+
+### 5. 错题复习
+
+1. 在结果页面点击"📄 导出错题CSV"按钮
+2. 下载生成的错题文件
+3. 可以使用错题文件重新进行针对性测验
+
+**Happy Learning! 📚✨**
